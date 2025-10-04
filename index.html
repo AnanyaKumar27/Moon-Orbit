@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Orbit</title>
+  <style>
+    .container {
+      background-color: rgba(0, 0, 0, 0.904);
+      height: 1000px;
+      width: 1000px;
+      margin: 0;
+      position: relative;
+    }
+
+    .bcircle {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background: radial-gradient(rgba(47, 76, 204), transparent 99%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 300px; /* Diameter of orbit */
+      width: 300px;
+      margin-left: -150px; /* Half of width */
+      margin-top: -150px;  /* Half of height */
+      animation: rotate 6s linear infinite;
+    }
+
+    .wcircle {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background: radial-gradient(rgb(238, 239, 243), transparent 99%);
+      position: absolute;
+      top: 0; /* top of orbit circle */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="bcircle"></div>
+    <div class="orbit">
+      <div class="wcircle"></div>
+    </div>
+  </div>
+</body>
+</html>
